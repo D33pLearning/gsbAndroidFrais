@@ -1,5 +1,4 @@
 package fr.cned.emdsgil.suividevosfrais;
-
 import android.content.Intent;
 import android.util.Log;
 
@@ -13,7 +12,7 @@ import org.json.JSONObject;
 
 public class AccesDistant implements AsynchResponse {
 
-    private static final String SERVEURADDR = "http://192.168.1.13/gsb/serveurgsb.php";
+    private static final String SERVEURADDR = "http://www.d33plearning.me/gsb/serveurgsb.ph";
     public static int start = 1;
 
     public AccesDistant (){
@@ -24,11 +23,12 @@ public class AccesDistant implements AsynchResponse {
     @Override
     public void processFinish(String output) {
 
+        Log.d("serveur", "**********" + "Serveur OK");
         Log.d("serveur", "**********" + output);
+
         //decoupage du message recu avec :
         String[] message = output.split("%");
         Log.d("serveur", "**********" + message[0]);
-        String lol = "connexion";
         if (message[0].equals("enreg")) {
             Log.d("message", "**********" + message);
             Log.d("enreg", "*************" + message[1]);
