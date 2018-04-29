@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class AccesDistant implements AsynchResponse {
 
-    private static final String SERVEURADDR = "http://www.d33plearning.me/gsb/serveurgsb.ph";
+    private static final String SERVEURADDR = "http://www.d33plearning.me/gsb/serveurgsb.php";
     public static int start = 1;
 
     public AccesDistant (){
@@ -30,6 +30,7 @@ public class AccesDistant implements AsynchResponse {
         String[] message = output.split("%");
         Log.d("serveur", "**********" + message[0]);
         if (message[0].equals("enreg")) {
+            Log.d("serveur", "je suis dans enreg");
             Log.d("message", "**********" + message);
             Log.d("enreg", "*************" + message[1]);
             }
@@ -54,6 +55,8 @@ public class AccesDistant implements AsynchResponse {
                 }
             }
         else {
+            Log.d("serveur", "je suis dans else");
+            start = 0;
             if (message[0].equals("dernier")) {
                 Log.d("dernier", "*************" + message[1]);
                 } else {
